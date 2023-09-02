@@ -7,3 +7,4 @@
 3. GIT: Created new branch V1.1
 	- Changes done on HTML page. 
 	- Created pull request
+4. Add Title - Nomis Solutions : Completion Certificate
