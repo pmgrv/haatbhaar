@@ -144,30 +144,27 @@
     <a class="text-dark" href="https://github.com/pmgrv/haatbhaar">HaathBhaar</a>
     <a href="https://wa.me/9403148108"><i class="fa fa-whatsapp" aria-hidden="true" style="color:green;"></i></a>
     <a href="https://www.linkedin.com/in/pravinkumar-raut-4ab62a3b/"><i class="fa fa-linkedin" aria-hidden="true" style="color:blue;"></i></a>
-    <button id="downloadButton"><i class="fa fa-download" aria-hidden="true"  style="color:black;"></i></button>
+    <button id="element-to-print"><i class="fa fa-download" aria-hidden="true"  style="color:black;"></i></button>
   </div>
   <!-- Copyright -->
 </footer>
-<script src="jspdf.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script>
-    document.getElementById('downloadButton').addEventListener('click', function () {
-        // Create a new jsPDF instance
-        const pdf = new jsPDF();
+var element = document.getElementById('element-to-print');
+var opt = {
+  margin:       1,
+  filename:     'myfile.pdf',
+  image:        { type: 'jpeg', quality: 0.98 },
+  html2canvas:  { scale: 2 },
+  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+};
 
-        // Add a page to the PDF
-        pdf.addPage();
+// New Promise-based usage:
+html2pdf().set(opt).from(element).save();
 
-        // Convert the entire HTML page to a PDF
-        pdf.html(document.body, {
-            callback: function (pdf) {
-                // Save the PDF as a file with a specific name
-                pdf.save('downloaded.pdf');
-            },
-        });
-    });
-
-function jsPDF(options) {
-}
+// Old monolithic-style usage:
+html2pdf(element, opt);
 
 </script>
 
