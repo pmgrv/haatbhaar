@@ -94,7 +94,7 @@
         </style>
 
     </head>
-    <body class="center">
+    <body class="center" id="contentToConvert">
         <div class="container">
 	    <div class="logo">
 		<a href="https://nomissolutions.com/about-nomis/" target="_blank">
@@ -144,28 +144,54 @@
     <a class="text-dark" href="https://github.com/pmgrv/haatbhaar">HaathBhaar</a>
     <a href="https://wa.me/9403148108"><i class="fa fa-whatsapp" aria-hidden="true" style="color:green;"></i></a>
     <a href="https://www.linkedin.com/in/pravinkumar-raut-4ab62a3b/"><i class="fa fa-linkedin" aria-hidden="true" style="color:blue;"></i></a>
-    <button id="element-to-print"><i class="fa fa-download" aria-hidden="true"  style="color:black;"></i></button>
+    <button id="convertButton"><i class="fa fa-download" aria-hidden="true"  style="color:black;"></i></button>
   </div>
   <!-- Copyright -->
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
-var element = document.getElementById('element-to-print');
-var opt = {
-  margin:       1,
-  filename:     'myfile.pdf',
-  image:        { type: 'jpeg', quality: 0.98 },
-  html2canvas:  { scale: 2 },
-  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-};
+// var element = document.getElementById('element-to-print');
+// var opt = {
+//   margin:       1,
+//   filename:     'myfile.pdf',
+//   image:        { type: 'jpeg', quality: 0.98 },
+//   html2canvas:  { scale: 2 },
+//   jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+// };
 
-// New Promise-based usage:
-html2pdf().set(opt).from(element).save();
+// // New Promise-based usage:
+// html2pdf().set(opt).from(element).save();
 
-// Old monolithic-style usage:
-html2pdf(element, opt);
+// // Old monolithic-style usage:
+// html2pdf(element, opt);
 
+</script>
+<script>
+    document.getElementById('convertButton').addEventListener('click', function () {
+        const element = document.getElementById('contentToConvert');
+        const pdfOptions = {
+            margin: 10,
+            filename: 'downloaded.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        html2pdf().from(element).set(pdfOptions).outputPdf().then(function (pdf) {
+            // Save the PDF as a Blob
+            const pdfBlob = pdf.output('blob');
+
+            // Create a download link and trigger the download
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(pdfBlob);
+            a.download = pdfOptions.filename;
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+    });
 </script>
 
 </body>
