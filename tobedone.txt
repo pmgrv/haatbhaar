@@ -1,0 +1,20 @@
+Plan to be changed
+1. Add Following details
+	- Company Logo
+	- Background as per company theme
+	- To whom it may concern
+	- Work Completion Certificate
+	- Name of Work Project : Nomis Solutions
+	- Work Order Number : Jira_Last_Ticket_Id
+	- Work Period _________ To _____________
+	This is to certify that Mr. Pravinkumar A Raut(Insert same name as per company) 
+	has successfully Completed (Insert JOB/Task Details).
+	The work is completed on CompletionDate successfully.
+	Thanking you and wishing you all the best way till the next TERMINAL arrived.
+	Work Co-ordinator						Client Comments
+	Warren  								-----------------
+	Associated Signature: 					-----------------
+	
+	
+	
+2. Class Template Generator as per company theme
