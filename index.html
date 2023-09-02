@@ -144,9 +144,28 @@
     <a class="text-dark" href="https://github.com/pmgrv/haatbhaar">HaathBhaar</a>
     <a href="https://wa.me/9403148108"><i class="fa fa-whatsapp" aria-hidden="true" style="color:green;"></i></a>
     <a href="https://www.linkedin.com/in/pravinkumar-raut-4ab62a3b/"><i class="fa fa-linkedin" aria-hidden="true" style="color:blue;"></i></a>
-    <button ><i class="fa fa-download" aria-hidden="true"  style="color:black;"></i></button>
+    <button id="downloadButton"><i class="fa fa-download" aria-hidden="true"  style="color:black;"></i></button>
   </div>
   <!-- Copyright -->
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script>
+    document.getElementById('downloadButton').addEventListener('click', function () {
+        // Create a new jsPDF instance
+        const pdf = new jsPDF();
+
+        // Add a page to the PDF
+        pdf.addPage();
+
+        // Convert the entire HTML page to a PDF
+        pdf.html(document.body, {
+            callback: function (pdf) {
+                // Save the PDF as a file with a specific name
+                pdf.save('downloaded.pdf');
+            },
+        });
+    });
+</script>
+
 </body>
 </html>
