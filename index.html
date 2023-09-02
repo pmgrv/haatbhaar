@@ -93,23 +93,7 @@
 	}
         </style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
-<script>
-    document.getElementById('convertButton').addEventListener('click', function () {
-        const contentToConvert = document.getElementById('contentToConvert');
-        const pdfOptions = {
-            margin: 10,
-            filename: 'converted.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2 },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-        };
 
-        html2pdf().from(contentToConvert).set(pdfOptions).outputPdf().then(function (pdf) {
-            // Save or display the PDF as needed
-            pdf.save(pdfOptions.filename);
-        });
-    });
-</script>
     </head>
     <body class="center" id="contentToConvert">
         <div class="container">
@@ -167,5 +151,22 @@
   </div>
   <!-- Copyright -->
 </footer>
+<script>
+    document.getElementById('convertButton').addEventListener('click', function () {
+        const contentToConvert = document.getElementById('contentToConvert');
+        const pdfOptions = {
+            margin: 10,
+            filename: 'converted.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        html2pdf().from(contentToConvert).set(pdfOptions).outputPdf().then(function (pdf) {
+            // Save or display the PDF as needed
+            pdf.save(pdfOptions.filename);
+        });
+    });
+</script>
     </body>
 </html>
