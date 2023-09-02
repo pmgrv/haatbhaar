@@ -1,2 +1,8 @@
 "# haatbhaar"
-1. Creating application on the Base of Git
+1. GIT:Creating application on the Base of Git (HTML & CSS)
+
+2. AZURE: Deploying on Azure (https://portal.azure.com/?quickstart=True#@persistentsystems.onmicrosoft.com/resource/subscriptions/33bc646d-df3c-4fe0-ade3-f9c92467d2af/resourcegroups/haathbhaar_group/providers/Microsoft.Web/staticSites/haathbhaar/staticsite)
+ - Deploying through Azure
+ - main branch will get changed then CICD will be executed
+3. GIT: Created new branch V1.1
+	- Changes done on HTML page. 
