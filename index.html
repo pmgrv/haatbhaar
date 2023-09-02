@@ -92,15 +92,24 @@
 	    font-size: 15px;
 	}
         </style>
-	<script>
-	    document.getElementById('convertButton').addEventListener('click', function () {
-	        pdfmyurl.api.pdf(this, {
-	            format: 'A4',
-	            margin: '1cm',
-	            orientation: 'portrait'
-	        });
-	    });
-	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script>
+    document.getElementById('convertButton').addEventListener('click', function () {
+        const contentToConvert = document.getElementById('contentToConvert');
+        const pdfOptions = {
+            margin: 10,
+            filename: 'converted.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        html2pdf().from(contentToConvert).set(pdfOptions).outputPdf().then(function (pdf) {
+            // Save or display the PDF as needed
+            pdf.save(pdfOptions.filename);
+        });
+    });
+</script>
     </head>
     <body class="center">
         <div class="container">
@@ -152,7 +161,7 @@
     <a class="text-dark" href="https://github.com/pmgrv/haatbhaar">HaathBhaar</a>
     <a href="https://wa.me/9403148108"><i class="fa fa-whatsapp" aria-hidden="true" style="color:green;"></i></a>
     <a href="https://www.linkedin.com/in/pravinkumar-raut-4ab62a3b/"><i class="fa fa-linkedin" aria-hidden="true" style="color:blue;"></i></a>
-    <i class="fa fa-download" aria-hidden="true"  style="color:black;" id="convertButton"></i>
+    <button id="convertButton"><i class="fa fa-download" aria-hidden="true"  style="color:black;" id="convertButton"></i></button>
 
 
   </div>
