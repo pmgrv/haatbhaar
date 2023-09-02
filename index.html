@@ -150,8 +150,26 @@
   </div>
   <!-- Copyright -->
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 <script>
+    document.getElementById('convertButton').addEventListener('click', function () {
+        // Create a new jsPDF instance
+        const pdf = new jsPDF();
+
+        // Add a page to the PDF
+        pdf.addPage();
+
+        // Convert the entire HTML page to a PDF
+        pdf.html(document.body, {
+            callback: function (pdf) {
+                // Save or display the PDF as needed
+                pdf.save('page.pdf');
+            },
+        });
+    });
+</script>
+<!-- <script>
     document.getElementById('convertButton').addEventListener('click', function () {
         const contentToConvert = document.getElementById('contentToConvert');
         const pdfOptions = {
@@ -167,6 +185,6 @@
             pdf.save(pdfOptions.filename);
         });
     });
-</script>
+</script> -->
     </body>
 </html>
