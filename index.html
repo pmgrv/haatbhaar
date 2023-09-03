@@ -202,10 +202,10 @@
       //   document.body.removeChild(a);
       // });
 	// New Promise-based usage:
-	html2pdf().set(opt).from(element).save();
+	html2pdf().set(pdfOptions).from(element).save();
 	
 	// Old monolithic-style usage:
-	html2pdf(element, opt);
+	html2pdf(element, pdfOptions);
     }
 	document.getElementById('convertButton').addEventListener('click', generatePdf);
   });
