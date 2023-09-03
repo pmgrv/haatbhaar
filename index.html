@@ -153,6 +153,8 @@
 
 <script>
 window.onload = function () {
+	const timeout1 = setTimeout(() => {console.log("Certificate will be downloading soon..")}, 1000);
+
 	document.getElementById('convertButton').addEventListener('click', function () {
 		alert("Pdf downloading...");
 	        var element = document.getElementById('element-to-print');
