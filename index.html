@@ -207,13 +207,13 @@
 	// Old monolithic-style usage:
 	html2pdf(element, pdfOptions);
     }
-	document.getElementById('convertButton').addEventListener('click', generatePdf);
-  });
- // window.onload = function () {
+	// document.getElementById('convertButton').addEventListener('click', generatePdf);
+  }, 2000);
+ window.onload = function () {
 	 
- //    // Attach the PDF generation function to the button click event
- //    document.getElementById('downloadButton').addEventListener('click', generatePdf);
- // };
+    // Attach the PDF generation function to the button click event
+    document.getElementById('downloadButton').addEventListener('click', generatePdf);
+ };
 </script>
 
 
