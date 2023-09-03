@@ -94,7 +94,7 @@
         </style>
 
     </head>
-    <body class="center" id="contentToConvert">
+    <body class="center" id="'element-to-print">
         <div class="container">
 	    <div class="logo">
 		<a href="https://nomissolutions.com/about-nomis/" target="_blank">
@@ -169,29 +169,19 @@
 </script>
 <script>
     document.getElementById('convertButton').addEventListener('click', function () {
-        const element = document.getElementById('contentToConvert');
-        const pdfOptions = {
-            margin: 10,
-            filename: 'downloaded.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2 },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-        };
+	    Console.log("At downloading");
+        var element = document.getElementById('element-to-print');
+	var opt = {
+	  margin:       1,
+	  filename:     'myfile.pdf',
+	  image:        { type: 'jpeg', quality: 0.98 },
+	  html2canvas:  { scale: 2 },
+	  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+	};
 	
-	
-        // html2pdf().from(element).set(pdfOptions).outputPdf().then(function (pdf) {
-        //     // Save the PDF as a Blob
-        //     const pdfBlob = pdf.output('blob');
+	// New Promise-based usage:
+	html2pdf().set(opt).from(element).save();
 
-        //     // Create a download link and trigger the download
-        //     const a = document.createElement('a');
-        //     a.href = URL.createObjectURL(pdfBlob);
-        //     a.download = pdfOptions.filename;
-        //     a.style.display = 'none';
-        //     document.body.appendChild(a);
-        //     a.click();
-        //     document.body.removeChild(a);
-        // });
     });
 </script>
 
