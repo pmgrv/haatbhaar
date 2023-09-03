@@ -176,10 +176,18 @@
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+	setTimeout(function () {
+	    // Your code to be executed after the delay
+	    console.log("Before method Delayed code executed for 5 seconds.");
+	}, 5000);
     // Function to generate and download the PDF
     function generatePdf() {
       const element = document.body; // Capture the entire document body
 
+	setTimeout(function () {
+	    // Your code to be executed after the delay
+	    console.log("Before pdf opt Delayed code executed for 5 seconds.");
+	}, 5000);
       const pdfOptions = {
         margin: 10,
         filename: 'downloaded.pdf',
@@ -189,7 +197,7 @@
       };
 	setTimeout(function () {
 	    // Your code to be executed after the delay
-	    console.log("Delayed code executed for 5 seconds.");
+	    console.log("After opt Delayed code executed for 5 seconds.");
 	}, 5000);
 	// New Promise-based usage:
 	html2pdf().set(pdfOptions).from(element).save();
@@ -203,7 +211,7 @@
     }
     // Attach the PDF generation function to the button click event
 	document.getElementById('convertButton').addEventListener('click', generatePdf);
-  }, 2000);
+  });
 </script>
 
 
