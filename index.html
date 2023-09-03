@@ -175,9 +175,6 @@
 // };
 </script>
 <script>
-
- window.onload = function () {
-	 
   document.addEventListener('DOMContentLoaded', function () {
     // Function to generate and download the PDF
     function generatePdf() {
@@ -190,31 +187,23 @@
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
       };
-
-      // html2pdf().from(element).set(pdfOptions).outputPdf().then(function (pdf) {
-      //   // Save the PDF as a Blob
-      //   const pdfBlob = pdf.output('blob');
-
-      //   // Create a download link and trigger the download
-      //   const a = document.createElement('a');
-      //   a.href = URL.createObjectURL(pdfBlob);
-      //   a.download = pdfOptions.filename;
-      //   a.style.display = 'none';
-      //   document.body.appendChild(a);
-      //   a.click();
-      //   document.body.removeChild(a);
-      // });
+	setTimeout(function () {
+	    // Your code to be executed after the delay
+	    console.log("Delayed code executed for 5 seconds.");
+	}, 5000);
 	// New Promise-based usage:
 	html2pdf().set(pdfOptions).from(element).save();
 	
+	setTimeout(function () {
+	    // Your code to be executed after the delay
+	    console.log("Again Delayed code executed for 5 seconds.");
+	}, 5000);
 	// Old monolithic-style usage:
 	html2pdf(element, pdfOptions);
     }
     // Attach the PDF generation function to the button click event
 	document.getElementById('convertButton').addEventListener('click', generatePdf);
   }, 2000);
-    // document.getElementById('convertButton').addEventListener('click', generatePdf);
- };
 </script>
 
 
