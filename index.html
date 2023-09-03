@@ -176,9 +176,27 @@
 </script>
 <script>
 $(document).ready(function(){
-  setTimeout(function(){
-    $("#convertButton").show();
-  }, 20000);
+	  // Get a reference to the button element
+	const button = document.getElementById('myButton');
+	
+	// Function to hide the button
+	function hideButton() {
+	    button.style.display = 'none'; // Hide the button
+	}
+	
+	// Function to show the button
+	function showButton() {
+	    button.style.display = 'block'; // Show the button (assuming it was originally a block-level element)
+	}
+	
+	// Hide the button initially (optional)
+	hideButton();
+	
+	// Delay for 5 seconds (5000 milliseconds) before showing the button again
+	setTimeout(function () {
+	    showButton(); // Show the button after the delay
+	}, 15000);
+
 });
   document.addEventListener('DOMContentLoaded', function () {
 	setTimeout(function () {
@@ -187,8 +205,8 @@ $(document).ready(function(){
 	}, 15000);
     // Function to generate and download the PDF
     function generatePdf() {
-      const element = document.body; // Capture the entire document body
-
+      // const element = document.body; // Capture the entire document body
+      const element = document.getElementById('element-to-print');
       const pdfOptions = {
         margin: 10,
         filename: 'downloaded.pdf',
