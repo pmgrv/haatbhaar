@@ -152,27 +152,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
-function printMessage() {
-	console.log("Downloading started..");
-}
 window.onload = function () {
-	const timeout1 = setTimeout(() => {console.log("Certificate will be downloading soon..")}, 1000);
-
 	document.getElementById('convertButton').addEventListener('click', function () {
 		alert("Pdf downloading...");
-		
-	const timeout2 = setTimeout(printMessage, 2000);
 
-	        var element = document.getElementById('element-to-print');
+	        // var element = document.getElementById('element-to-print');
+		var element = document.body;
 		var opt = {
-			  margin:       1,
+			  margin:       10,
 			  filename:     'CompletionCertificate.pdf',
 			  image:        { type: 'jpeg', quality: 0.98 },
 			  html2canvas:  { scale: 2 },
-			  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+			  jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
 		};
-	console.log('Timeout IDs:', timeout1, timeout2)
-
 		// New Promise-based usage:
 		html2pdf().set(opt).from(element).save();
 		
