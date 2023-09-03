@@ -91,9 +91,6 @@
 	.col-xs-6 {
 	    font-size: 15px;
 	}
-	#convertButton{		
- 		display: none;
-	}
         </style>
 
     </head>
@@ -147,7 +144,7 @@
     <a class="text-dark" href="https://github.com/pmgrv/haatbhaar">HaathBhaar</a>
     <a href="https://wa.me/9403148108"><i class="fa fa-whatsapp" aria-hidden="true" style="color:green;"></i></a>
     <a href="https://www.linkedin.com/in/pravinkumar-raut-4ab62a3b/"><i class="fa fa-linkedin" aria-hidden="true" style="color:blue;"></i></a>
-    <button id="convertButton  hide"><i class="fa fa-download" aria-hidden="true"  style="color:black;"></i></button>
+    <button id="convertButton"><i class="fa fa-download" aria-hidden="true"  style="color:black;"></i></button>
   </div>
   <!-- Copyright -->
 </footer>
@@ -156,9 +153,27 @@
 
 <script>
 $(document).ready(function(){
-    setTimeout(function(){
-      $("#convertButton").show();
-    }, 15000);
+	  // Get a reference to the button element
+	const button = document.getElementById('convertButton');
+	
+	// Function to hide the button
+	function hideButton() {
+	    button.style.display = 'none'; // Hide the button
+	}
+	
+	// Function to show the button
+	function showButton() {
+	    button.style.display = 'block'; // Show the button (assuming it was originally a block-level element)
+	}
+	
+	// Hide the button initially (optional)
+	hideButton();
+	
+	// Delay for 5 seconds (5000 milliseconds) before showing the button again
+	setTimeout(function () {
+	    showButton(); // Show the button after the delay
+	}, 15000);
+
 });
 window.onload = function () {
 	document.getElementById('convertButton').addEventListener('click', function () {
