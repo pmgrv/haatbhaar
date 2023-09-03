@@ -94,8 +94,8 @@
         </style>
 
     </head>
-    <body class="center" id="'element-to-print">
-        <div class="container">
+    <body class="center">
+        <div class="container"  id="element-to-print">
 	    <div class="logo">
 		<a href="https://nomissolutions.com/about-nomis/" target="_blank">
 		    <img src="https://nomissolutions.com/wp-content/themes/sage/dist/images/nomis.png" alt="Nomis Logo">
@@ -168,19 +168,22 @@
 
 </script>
 <script>
-    document.getElementById('convertButton').addEventListener('click', function () {
-	    alert("At downloading");
+document.getElementById('convertButton').addEventListener('click', function () {
+	alert("At downloading");
         var element = document.getElementById('element-to-print');
 	var opt = {
-	  margin:       1,
-	  filename:     'myfile.pdf',
-	  image:        { type: 'jpeg', quality: 0.98 },
-	  html2canvas:  { scale: 2 },
-	  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+		  margin:       1,
+		  filename:     'myfile.pdf',
+		  image:        { type: 'jpeg', quality: 0.98 },
+		  html2canvas:  { scale: 2 },
+		  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
 	};
-	
+
 	// New Promise-based usage:
 	html2pdf().set(opt).from(element).save();
+	
+	// Old monolithic-style usage:
+	html2pdf(element, opt);
 
     });
 </script>
