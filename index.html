@@ -175,6 +175,9 @@
 // };
 </script>
 <script>
+
+ window.onload = function () {
+	 
   document.addEventListener('DOMContentLoaded', function () {
     // Function to generate and download the PDF
     function generatePdf() {
@@ -207,12 +210,10 @@
 	// Old monolithic-style usage:
 	html2pdf(element, pdfOptions);
     }
-	// document.getElementById('convertButton').addEventListener('click', generatePdf);
-  }, 2000);
- window.onload = function () {
-	 
     // Attach the PDF generation function to the button click event
-    document.getElementById('convertButton').addEventListener('click', generatePdf);
+	document.getElementById('convertButton').addEventListener('click', generatePdf);
+  }, 2000);
+    // document.getElementById('convertButton').addEventListener('click', generatePdf);
  };
 </script>
 
