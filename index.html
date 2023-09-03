@@ -188,27 +188,27 @@
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
       };
 
-      // html2pdf().from(element).set(pdfOptions).outputPdf().then(function (pdf) {
-      //   // Save the PDF as a Blob
-      //   const pdfBlob = pdf.output('blob');
+     //  html2pdf().from(element).set(pdfOptions).outputPdf().then(function (pdf) {
+     //    // Save the PDF as a Blob
+     //    const pdfBlob = pdf.output('blob');
 
-      //   // Create a download link and trigger the download
-      //   const a = document.createElement('a');
-      //   a.href = URL.createObjectURL(pdfBlob);
-      //   a.download = pdfOptions.filename;
-      //   a.style.display = 'none';
-      //   document.body.appendChild(a);
-      //   a.click();
-      //   document.body.removeChild(a);
+     //    // Create a download link and trigger the download
+     //    const a = document.createElement('a');
+     //    a.href = URL.createObjectURL(pdfBlob);
+     //    a.download = pdfOptions.filename;
+     //    a.style.display = 'none';
+     //    document.body.appendChild(a);
+     //    a.click();
+     //    document.body.removeChild(a);
 	
-    // }
-	// New Promise-based usage:
-	html2pdf().set(opt).from(element).save();
-	
-	// Old monolithic-style usage:
-	html2pdf(element, opt);
-	
-      });
+    	// }
+     //  });
+
+// New Promise-based usage:
+html2pdf().set(opt).from(element).save();
+
+// Old monolithic-style usage:
+html2pdf(element, opt);
 
     // Attach the PDF generation function to the button click event
     document.getElementById('convertButton').addEventListener('click', generatePdf);
