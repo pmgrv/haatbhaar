@@ -151,24 +151,26 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
 <script>
-document.getElementById('convertButton').addEventListener('click', function () {
-	alert("Pdf downloading...");
-        var element = document.getElementById('element-to-print');
-	var opt = {
-		  margin:       1,
-		  filename:     'CompletionCertificate.pdf',
-		  image:        { type: 'jpeg', quality: 0.98 },
-		  html2canvas:  { scale: 2 },
-		  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-	};
-
-	// New Promise-based usage:
-	html2pdf().set(opt).from(element).save();
+window.onload = function () {
+	document.getElementById('convertButton').addEventListener('click', function () {
+		alert("Pdf downloading...");
+	        var element = document.getElementById('element-to-print');
+		var opt = {
+			  margin:       1,
+			  filename:     'CompletionCertificate.pdf',
+			  image:        { type: 'jpeg', quality: 0.98 },
+			  html2canvas:  { scale: 2 },
+			  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+		};
 	
-	// Old monolithic-style usage:
-	html2pdf(element, opt);
-
-    });
+		// New Promise-based usage:
+		html2pdf().set(opt).from(element).save();
+		
+		// Old monolithic-style usage:
+		html2pdf(element, opt);
+	
+	    });
+});
 </script>
 
 </body>
