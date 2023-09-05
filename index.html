@@ -152,29 +152,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
-$(document).ready(function(){
-	  // Get a reference to the button element
-	const button = document.getElementById('convertButton');
+// $(document).ready(function(){
+// 	  // Get a reference to the button element
+// 	const button = document.getElementById('convertButton');
 	
-	// Function to hide the button
-	function hideButton() {
-	    button.style.display = 'none'; // Hide the button
-	}
+// 	// Function to hide the button
+// 	function hideButton() {
+// 	    button.style.display = 'none'; // Hide the button
+// 	}
 	
-	// Function to show the button
-	function showButton() {
-	    button.style.display = 'block'; // Show the button (assuming it was originally a block-level element)
-	}
+// 	// Function to show the button
+// 	function showButton() {
+// 	    button.style.display = 'block'; // Show the button (assuming it was originally a block-level element)
+// 	}
 	
-	// Hide the button initially (optional)
-	hideButton();
+// 	// Hide the button initially (optional)
+// 	hideButton();
 	
-	// Delay for 5 seconds (5000 milliseconds) before showing the button again
-	setTimeout(function () {
-	    showButton(); // Show the button after the delay
-	}, 15000);
+// 	// Delay for 5 seconds (5000 milliseconds) before showing the button again
+// 	setTimeout(function () {
+// 	    showButton(); // Show the button after the delay
+// 	}, 15000);
 
-});
+// });
 window.onload = function () {
 	document.getElementById('convertButton').addEventListener('click', function () {
 		alert("Pdf downloading...");
