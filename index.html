@@ -144,7 +144,8 @@
     <a class="text-dark" href="https://github.com/pmgrv/haatbhaar">HaathBhaar</a>
     <a href="https://wa.me/9403148108"><i class="fa fa-whatsapp" aria-hidden="true" style="color:green;"></i></a>
     <a href="https://www.linkedin.com/in/pravinkumar-raut-4ab62a3b/"><i class="fa fa-linkedin" aria-hidden="true" style="color:blue;"></i></a>
-    <button id="convertButton"><i class="fa fa-download" aria-hidden="true"  style="color:black;"></i></button>
+<!--     <button id="convertButton"><i class="fa fa-download" aria-hidden="true"  style="color:black;"></i></button> -->
+    <i class="fa fa-download" aria-hidden="true"  style="color:black;" id="convertButton"></i>
   </div>
   <!-- Copyright -->
 </footer>
@@ -152,29 +153,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
-// $(document).ready(function(){
-// 	  // Get a reference to the button element
-// 	const button = document.getElementById('convertButton');
-	
-// 	// Function to hide the button
-// 	function hideButton() {
-// 	    button.style.display = 'none'; // Hide the button
-// 	}
-	
-// 	// Function to show the button
-// 	function showButton() {
-// 	    button.style.display = 'block'; // Show the button (assuming it was originally a block-level element)
-// 	}
-	
-// 	// Hide the button initially (optional)
-// 	hideButton();
-	
-// 	// Delay for 5 seconds (5000 milliseconds) before showing the button again
-// 	setTimeout(function () {
-// 	    showButton(); // Show the button after the delay
-// 	}, 15000);
-
-// });
 window.onload = function () {
 	document.getElementById('convertButton').addEventListener('click', function () {
 		alert("Pdf downloading...");
@@ -198,61 +176,6 @@ window.onload = function () {
 	});
 };
 </script>
-<script>
-// $(document).ready(function(){
-// 	  // Get a reference to the button element
-// 	const button = document.getElementById('convertButton');
-	
-// 	// Function to hide the button
-// 	function hideButton() {
-// 	    button.style.display = 'none'; // Hide the button
-// 	}
-	
-// 	// Function to show the button
-// 	function showButton() {
-// 	    button.style.display = 'block'; // Show the button (assuming it was originally a block-level element)
-// 	}
-	
-// 	// Hide the button initially (optional)
-// 	hideButton();
-	
-// 	// Delay for 5 seconds (5000 milliseconds) before showing the button again
-// 	setTimeout(function () {
-// 	    showButton(); // Show the button after the delay
-// 	}, 15000);
-
-// });
-//   document.addEventListener('DOMContentLoaded', function () {
-// 	setTimeout(function () {
-// 	    // Your code to be executed after the delay
-// 	    console.log("Before method Delayed code executed for 15 seconds.");
-// 	}, 15000);
-//     // Function to generate and download the PDF
-//     function generatePdf() {
-//       // const element = document.body; // Capture the entire document body
-//       const element = document.getElementById('element-to-print');
-//       const pdfOptions = {
-//         margin: 10,
-//         filename: 'downloaded.pdf',
-//         image: { type: 'jpeg', quality: 0.98 },
-//         html2canvas: { scale: 2 },
-//         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-//       };
-// 	// New Promise-based usage:
-// 	html2pdf().set(pdfOptions).from(element).save();
-	
-// 	setTimeout(function () {
-// 	    // Your code to be executed after the delay
-// 	    console.log("Again Delayed code executed for 5 seconds.");
-// 	}, 5000);
-// 	// Old monolithic-style usage:
-// 	html2pdf(element, pdfOptions);
-//     }
-//     // Attach the PDF generation function to the button click event
-// 	document.getElementById('convertButton').addEventListener('click', generatePdf);
-//   });
-</script>
-
 
 </body>
 </html>
