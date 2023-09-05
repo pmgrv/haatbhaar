@@ -178,7 +178,8 @@
 window.onload = function () {
 	document.getElementById('convertButton').addEventListener('click', function () {
 		alert("Pdf downloading...");
-
+		const button = document.getElementById('convertButton');
+		button.style.display = 'none'; // Hide the button
 	        // var element = document.getElementById('element-to-print');
 		var element = document.body;
 		var opt = {
